@@ -45,7 +45,7 @@ const Modal = (props) => {
     return (
         <>
             {ReactDOM.createPortal(
-                <Backdrop />,
+                <Backdrop onClick={props.onCloseCart} />,
                 document.querySelector("#overlay")
             )}
             {ReactDOM.createPortal(

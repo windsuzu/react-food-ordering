@@ -33,12 +33,14 @@ const MainImage = styled.div`
     }
 `;
 
-const Header = () => {
+const Header = (props) => {
     return (
         <>
             <StyledHeader>
                 <h1>React Food Ordering</h1>
-                <HeaderCartButton>Cart</HeaderCartButton>
+                <HeaderCartButton onClick={props.onShowCart}>
+                    Cart
+                </HeaderCartButton>
             </StyledHeader>
             <MainImage>
                 <img src={MealImage} alt="React Food Ordering" />

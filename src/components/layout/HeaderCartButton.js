@@ -62,9 +62,9 @@ const StyledButton = styled.button`
     }
 `;
 
-const HeaderCartButton = () => {
+const HeaderCartButton = (props) => {
     return (
-        <StyledButton>
+        <StyledButton onClick={props.onClick}>
             <span className="icon">
                 <CartIcon />
             </span>
