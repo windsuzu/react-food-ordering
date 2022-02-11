@@ -1,15 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import CartContext from "../../store/cart-context";
 import Modal from "../ui/Modal";
-
-const DUMMY_DATA = [
-    {
-        id: "c1",
-        name: "sushi",
-        amount: 2,
-        price: 12.99,
-    },
-];
+import CartItem from "./CartItem";
 
 const CartItems = styled.ul`
     list-style: none;
@@ -58,10 +51,30 @@ const ActionDiv = styled.div`
 `;
 
 const Cart = (props) => {
+    const cartCtx = useContext(CartContext);
+
+    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+    const hasItems = cartCtx.items.length > 0;
+
+    const cartItemAddHandler = (item) => {
+        cartCtx.addItem({ ...item, amount: 1 });
+    };
+
+    const cartItemRemoveHandler = (id) => {
+        cartCtx.removeItem(id);
+    };
+
     const cartItems = (
         <CartItems>
-            {DUMMY_DATA.map((item) => (
-                <li>{item.name}</li>
+            {cartCtx.items.map((item) => (
+                <CartItem
+                    key={item.id}
+                    name={item.name}
+                    amount={item.amount}
+                    price={item.price}
+                    onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                    onAdd={cartItemAddHandler.bind(null, item)}
+                />
             ))}
         </CartItems>
     );
@@ -71,13 +84,13 @@ const Cart = (props) => {
             {cartItems}
             <TotalDiv>
                 <span>Total Amount</span>
-                <span>35.62</span>
+                <span>{totalAmount}</span>
             </TotalDiv>
             <ActionDiv>
                 <button className="close" onClick={props.onCloseCart}>
                     Close
                 </button>
-                <button className="order">Order</button>
+                {hasItems && <button className="order">Order</button>}
             </ActionDiv>
         </Modal>
     );

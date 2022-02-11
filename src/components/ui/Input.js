@@ -20,13 +20,13 @@ const StyledInput = styled.div`
     }
 `;
 
-const Input = (props) => {
+const Input = React.forwardRef((props, ref) => {
     return (
         <StyledInput>
             <label htmlFor={props.input.id}>{props.label}</label>
-            <input id={props.input.id} {...props.input} />
+            <input ref={ref} id={props.input.id} {...props.input} />
         </StyledInput>
     );
-};
+});
 
 export default Input;

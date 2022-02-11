@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Input from "../../ui/Input";
 
@@ -24,9 +24,22 @@ const StyledForm = styled.form`
 `;
 
 const MealItemForm = (props) => {
+    const amountInputRef = useRef();
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        const enteredAmount = +amountInputRef.current.value;
+
+        if (!enteredAmount || 5 < enteredAmount < 0) {
+            return;
+        }
+        props.onAddToCart(enteredAmount);
+    };
+
     return (
-        <StyledForm>
+        <StyledForm onSubmit={submitHandler}>
             <Input
+                ref={amountInputRef}
                 label="amount"
                 input={{
                     id: `amount_${props.id}`,
