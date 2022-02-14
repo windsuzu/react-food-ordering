@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+<!--
+*** Thanks for checking out the react-food-ordering. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Thanks again! Now go create something AMAZING! :D
+***
+*** To avoid retyping too much info. Do a search and replace for the following:
+*** github_username (that is "windsuzu"), repo_name (that is "react-food-ordering"), project_title, project_description
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- [![Issues][issues-shield]][issues-url] -->
+<!-- [![PR Welcome][pr-welcome-shield]](#contributing) -->
+[![Contributors][contributors-shield]][contributors-url]
+[![MIT License][license-shield]][license-url]
+[![Author][author-shield]][author-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## Available Scripts
 
-In the project directory, you can run:
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://windsuzu.github.io/react-food-ordering">
+    <img src="public/logo.png" alt="Food icons created by Freepik - Flaticon" width="80" height="80">
+  </a>
 
-### `npm start`
+  <h3 align="center">React Food Ordering</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <p align="center">
+    A food ordering application built with react.js. 
+    <br />
+    <a href="https://windsuzu.github.io/react-food-ordering">View Demo</a>
+    ·
+    <a href="https://github.com/windsuzu/react-food-ordering/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/windsuzu/react-food-ordering/issues">Request Feature</a>
+  </p>
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<details>
+<summary>Table of Contents</summary>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [About](#about)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-### `npm run build`
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- ABOUT THE PROJECT -->
+## About
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<table>
+<tr>
+<td>
 
-### `npm run eject`
+**React Food Ordering** 展示 React.js 中除了 `useState`, `useEffect`, `useRef` 以外的進階概念，例如:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **`useReducer`** 使用時機
+   * 當 `useState` 多到很難管理
+   * 當一個狀態有太多種行動類型 (action type) 
+   * 當狀態之間有一定的關聯性
+2. **`useContext`** 使用時機
+   * 當 `state lifting` 變得不方便
+   * 當傳遞 props 需要經過多個 components
+3. **`React.forwardRef`** 使用時機
+   * 當你想將在 custom component 上使用 `useRef`
+4. **`useCallback`, `useMemo`** 使用時機
+   * 當你想讓 function 或 data 只因特定的依賴改變而刷新 (或是不被輕易刷新)
+   * 當你只用 `React.memo` 無法處理刷新問題
+5. **`Custom Hooks`** 使用時機
+   * 當某些 state 的處理過於複雜又需要大量重複使用
+   * 例如 form validations, http requests
+   * Maybe you don't need to reinvent the wheel [[useHttp]](https://github.com/ava/use-http) [[react-hook-form]](https://github.com/react-hook-form/react-hook-form)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Built With**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* HTML5, CSS3, Javascript ES6
+* React.js
+* Styled Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**[DEMO]** : https://windsuzu.github.io/react-food-ordering
 
-## Learn More
+</td>
+</tr>
+</table>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Features
 
-### Code Splitting
+### 🥪 useReducer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* 
+* 
+* 
 
-### Analyzing the Bundle Size
+### 🪜 useContext
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+*  
+* 
+* 
 
-### Making a Progressive Web App
+### 🪱 React.forwardRef
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* 
+* 
+* 
 
-### Advanced Configuration
+### 🪝 Custom Hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<table><tr><td>
 
-### Deployment
+#### 🕸️ useHttp
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* 
+* 
+* 
 
-### `npm run build` fails to minify
+#### ✍️ useInput
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* 
+* 
+* 
+
+</td></tr></table>
+
+
+---
+
+## Preview
+
+<p align="center">
+  <img src="images/web-screenshot/1.png" width=68%>
+  <img src="images/phone-screenshot/1.png" width=22%>
+</p>
+<p align="center">
+  <img src="images/web-screenshot/2.png" width=68%>
+  <img src="images/phone-screenshot/2.png" width=22%>
+</p>
+
+---
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/windsuzu/react-food-ordering/blob/main/LICENSE) for more information.
+
+## Contact
+
+Reach out to the maintainer at one of the following places:
+
+* [GitHub discussions](https://github.com/windsuzu/react-food-ordering/discussions)
+* The email which is located [in GitHub profile](https://github.com/windsuzu)
+
+
+## Acknowledgements
+
+* [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)
+
+[contributors-shield]: https://img.shields.io/github/contributors/windsuzu/react-food-ordering.svg?style=for-the-badge
+[contributors-url]: https://github.com/windsuzu/react-food-ordering/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/windsuzu/react-food-ordering.svg?style=for-the-badge
+[issues-url]: https://github.com/windsuzu/react-food-ordering/issues
+[license-shield]: https://img.shields.io/github/license/windsuzu/react-food-ordering.svg?style=for-the-badge&label=license
+[license-url]: https://github.com/windsuzu/react-food-ordering/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/windsuzu
+[pr-welcome-shield]: https://shields.io/badge/PRs-Welcome-ff69b4?style=for-the-badge
+[author-shield]: https://shields.io/badge/Made_with_%E2%9D%A4_by-windsuzu-F4A92F?style=for-the-badge
+[author-url]: https://github.com/windsuzu
