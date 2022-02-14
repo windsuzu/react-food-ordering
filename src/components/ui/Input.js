@@ -9,6 +9,9 @@ const StyledInput = styled.div`
     label {
         font-weight: bold;
         margin-right: 1rem;
+        @media (max-width: 768px) {
+            font-size: 0.5rem;
+        }
     }
 
     input {
@@ -17,6 +20,10 @@ const StyledInput = styled.div`
         border: 1px solid #ccc;
         font: inherit;
         padding-left: 0.5rem;
+
+        @media (max-width: 768px) {
+            font-size: 0.5rem;
+        }
     }
 `;
 

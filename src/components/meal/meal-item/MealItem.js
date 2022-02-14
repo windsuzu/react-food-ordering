@@ -24,6 +24,16 @@ const StyledItem = styled.li`
         color: #ad5502;
         font-size: 1.25rem;
     }
+
+    @media (max-width: 768px) {
+        h3 {
+            font-size: 0.9rem;
+
+            &.price {
+                font-size: 1.1rem;
+            }
+        }
+    }
 `;
 
 const MealItem = (props) => {

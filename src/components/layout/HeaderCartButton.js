@@ -16,6 +16,11 @@ const StyledButton = styled.button`
     border-radius: 25px;
     font-weight: bold;
 
+    @media (max-width: 768px) {
+        font-size: 0.5rem;
+        padding: 0.5rem 1.2rem;
+    }
+
     &:hover,
     &:active {
         background-color: #2c0d00;

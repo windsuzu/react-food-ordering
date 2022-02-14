@@ -14,12 +14,17 @@ const StyledForm = styled.form`
         padding: 0.25rem 2rem;
         border-radius: 20px;
         font-weight: bold;
-    }
 
-    button:hover,
-    button:active {
-        background-color: #641e03;
-        border-color: #641e03;
+        &:hover,
+        &:active {
+            background-color: #641e03;
+            border-color: #641e03;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 0.5rem;
+            padding: 0.3rem 1.2rem;
+        }
     }
 `;
 

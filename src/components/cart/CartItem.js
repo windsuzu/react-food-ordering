@@ -11,6 +11,10 @@ const StyledItem = styled.li`
     h2 {
         margin: 0 0 0.5rem 0;
         color: #363636;
+
+        @media (max-width: 768px) {
+            font-size: 1.25rem;
+        }
     }
 `;
 

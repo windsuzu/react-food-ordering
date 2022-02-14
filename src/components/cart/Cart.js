@@ -21,6 +21,10 @@ const TotalDiv = styled.div`
     font-weight: bold;
     font-size: 1.5rem;
     margin: 1rem 0;
+
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 `;
 
 const ActionDiv = styled.div`
