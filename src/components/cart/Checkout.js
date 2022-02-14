@@ -105,6 +105,8 @@ const Checkout = (props) => {
             return;
         }
 
+        props.onConfirm({ name, street, postal, city });
+
         resetName();
         resetStreet();
         resetPostal();
