@@ -1,34 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import useHttp from "../../hooks/use-http";
 import Card from "../ui/Card";
 import MealItem from "./meal-item/MealItem";
 
-const DUMMY_MEALS = [
-    {
-        id: "m1",
-        name: "Sushi",
-        description: "Finest fish and veggies",
-        price: 22.99,
-    },
-    {
-        id: "m2",
-        name: "Schnitzel",
-        description: "A german specialty!",
-        price: 16.5,
-    },
-    {
-        id: "m3",
-        name: "Barbecue Burger",
-        description: "American, raw, meaty",
-        price: 12.99,
-    },
-    {
-        id: "m4",
-        name: "Green Bowl",
-        description: "Healthy...and green...",
-        price: 18.99,
-    },
-];
+const LoadingSection = styled.section`
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+`;
+
+const ErrorSection = styled.section`
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+`;
 
 const MealSection = styled.section`
     max-width: 60rem;
@@ -56,7 +44,48 @@ const MealSection = styled.section`
 `;
 
 const AvailableMeals = () => {
-    const mealList = DUMMY_MEALS.map((meal) => (
+    const [meals, setMeals] = useState([]);
+    const { isLoading, error, sendRequest: fetchMeals } = useHttp();
+
+    useEffect(() => {
+        const loadData = (data) => {
+            let loadedMeals = [];
+            for (const id in data) {
+                loadedMeals.push({
+                    id,
+                    name: data[id].name,
+                    description: data[id].description,
+                    price: data[id].price,
+                });
+            }
+            setMeals(loadedMeals);
+        };
+
+        fetchMeals(
+            {
+                url: "https://test-e9746-default-rtdb.firebaseio.com/meals.json",
+            },
+            loadData
+        );
+    }, [fetchMeals]);
+    // fetchMeals (sendRequest) is wrapped in a useCallback,
+    // so it will not change in the future
+
+    if (isLoading)
+        return (
+            <LoadingSection>
+                <p>Loading...</p>
+            </LoadingSection>
+        );
+
+    if (error)
+        return (
+            <ErrorSection>
+                <p>{error}</p>
+            </ErrorSection>
+        );
+
+    const mealList = meals.map((meal) => (
         <MealItem
             id={meal.id}
             key={meal.id}
