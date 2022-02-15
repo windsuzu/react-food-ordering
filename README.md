@@ -94,44 +94,40 @@
 
 ---
 
-## Features
+## Examples
 
 ### 🥪 useReducer
 
-* 
-* 
-* 
+1. [Define defaultState](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-input.js#L3-L6)
+2. [Define reducer](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-input.js#L8-L19) (control center that tweaks states by actions)
+3. [Instantiate `useReducer`](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-input.js#L22)
+4. [Dispatch actions](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-input.js#L27-L32)
 
 ### 🪜 useContext
 
-*  
-* 
-* 
+* [Define Context blueprint](https://github.com/windsuzu/react-food-ordering/blob/main/src/store/cart-context.js#L3-L9) (states and methods interface)
+* [Define Context Provider](https://github.com/windsuzu/react-food-ordering/blob/main/src/store/CartProvider.js#L76-L96) (with state and methods instances)
+* [Wrap parent component with ContextProvider](https://github.com/windsuzu/react-food-ordering/blob/main/src/App.js#L12-L20)
+* [`useContext` in child components](https://github.com/windsuzu/react-food-ordering/blob/main/src/components/layout/HeaderCartButton.js#L73-L81)
 
 ### 🪱 React.forwardRef
 
-* 
-* 
-* 
+* [Wrap custom component with `React.forwardRef`](https://github.com/windsuzu/react-food-ordering/blob/main/src/components/ui/Input.js#L30-L37)
+* [Assign `useRef` to the custom component](https://github.com/windsuzu/react-food-ordering/blob/main/src/components/meal/meal-item/MealItemForm.js#L46-L47)
 
 ### 🪝 Custom Hooks
 
-<table><tr><td>
-
 #### 🕸️ useHttp
 
-* 
-* 
-* 
+* [Define internal states and functions](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-http.js#L4-L25)
+  * We wrap functions with `useCallback` to make it easier to use in `useEffect`
+* [Export states and functions we want to reuse](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-http.js#L27-L31)
+* [Import `useHttp` and utilize states and functions](https://github.com/windsuzu/react-food-ordering/blob/main/src/components/meal/AvailableMeals.js#L48-L86)
 
 #### ✍️ useInput
 
-* 
-* 
-* 
-
-</td></tr></table>
-
+* [Design `useInput`](https://github.com/windsuzu/react-food-ordering/blob/main/src/hooks/use-input.js#L21-L42)
+* [Utilize `useInput`](https://github.com/windsuzu/react-food-ordering/blob/main/src/components/cart/Checkout.js#L61-L95)
 
 ---
 
